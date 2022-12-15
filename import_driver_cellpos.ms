@@ -80,12 +80,11 @@
 				
 				if invertRot_chkBx.checked == true do
 				(
-					if cell_rot >= 0 and cell_rot < 33 do
+					if cell_rot == 1 then
 					(
-						cell_rot = cell_rot - 32
-						cell_rot = -cell_rot
+						continue
 					)
-					if cell_rot > 32 and cell_rot < 63 do
+					else
 					(
 						cell_rot = cell_rot - 32
 						cell_rot = -cell_rot
@@ -109,6 +108,7 @@
 			)
 		)
 		catch messagebox "Import the .OBJ first"
+		actionMan.executeAction 0 "310"
 	)
 	)--end rollout
 	createDialog odriver_cellpos_rollout 264 472
