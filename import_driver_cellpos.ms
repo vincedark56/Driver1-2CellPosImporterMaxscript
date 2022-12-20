@@ -82,7 +82,7 @@
 				(
 					if cell_rot == 1 then
 					(
-						continue
+						return cell_rot
 					)
 					else
 					(
@@ -106,9 +106,9 @@
 				cell_rot_z_euler = cell_rot as float * 5.625 
 				cellbox.rotation.z_rotation = cell_rot_z_euler
 			)
+			actionMan.executeAction 0 "310"
 		)
 		catch messagebox "Import the .OBJ first"
-		actionMan.executeAction 0 "310"
 	)
 	)--end rollout
 	createDialog odriver_cellpos_rollout 264 472
