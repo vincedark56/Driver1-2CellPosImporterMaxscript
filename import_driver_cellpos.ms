@@ -82,7 +82,6 @@
 				(
 					if cell_rot == 1 then
 					(
-						return cell_rot
 					)
 					else
 					(
@@ -96,20 +95,20 @@
 				cellbox.name = preffix + box_id
 				obj_pos_line = readLine in_obj -- store the next line to the string variable obj_pos_line
 				obj_pos_line_str = filterString obj_pos_line "v " -- filter string will ignore the the characters returning an array of strings
-				cellposx = execute obj_pos_line_str[1] * scale
+				cellposx = obj_pos_line_str[1] as float
 				if invertX_chkBx.checked == true then cellposx = -cellposx
-				cellposy = execute obj_pos_line_str[3] * scale
+				cellposy = obj_pos_line_str[3] as float
 				if invertY_chkBx.checked == true then cellposy = -cellposy
-				cellposz = execute obj_pos_line_str[2] * scale
+				cellposz = obj_pos_line_str[2] as float
 				if invertZ_chkBx.checked == true then cellposz = -cellposz
-				cellbox.pos = point3  cellposx cellposy cellposz
+				cellbox.pos = point3  cellposx cellposy cellposz * scale
 				cell_rot_z_euler = cell_rot as float * 5.625 
 				cellbox.rotation.z_rotation = cell_rot_z_euler
+				)
+				actionMan.executeAction 0 "310"
 			)
-			actionMan.executeAction 0 "310"
+			catch messagebox "Import the .OBJ first"
 		)
-		catch messagebox "Import the .OBJ first"
-	)
 	)--end rollout
 	createDialog odriver_cellpos_rollout 264 472
 )
