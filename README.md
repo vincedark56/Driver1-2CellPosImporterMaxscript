@@ -11,5 +11,5 @@ This Maxscript imports the CELLPOS*.obj models positions from OpenDriver2Tools.
 |D1|New York| |Invert X|
 |D2|Chicago| |Invert X, Invert Rotation|
 |D2|Havanna| | |
-|D2|Las Vegas| | |
+|D2|Las Vegas|Invert X|Invert X|
 |D2|Rio|Invert X and Y|Invert X, Invert Rotation|
